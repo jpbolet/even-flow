@@ -1,5 +1,6 @@
 package com.jpbolet.evenflow.api.model;
 
+import com.jpbolet.evenflow.api.model.Stage.StageType;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -21,7 +22,7 @@ public class Event {
 	@Id private long id;
 	private LocalDateTime start;
 	private LocalDateTime end;
-	private EventType eventType;
+	private StageType stageType;
 	private Clinician clinician;
 	private String description;
 
