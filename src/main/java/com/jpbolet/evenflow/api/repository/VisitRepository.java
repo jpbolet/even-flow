@@ -10,7 +10,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "visits", path = "visits")
 public interface VisitRepository extends MongoRepository<Visit, String> {
 
-	List<Visit> findByVisitId(@Param("visitId") String visitId);
+	List<Visit> findById(@Param("id") Long id);
 
 	List<Visit> findAll();
 

@@ -3,6 +3,7 @@ package com.jpbolet.evenflow.api.model;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -11,7 +12,10 @@ import java.util.Map;
 @Builder
 public class Visit {
 
-	@Id private String visitId;
+	@Transient
+	public static final String SEQUENCE_NAME = "visits_sequence";
+
+	@Id private long id;
 	private LocalDateTime visitStart;
 	private LocalDateTime visitEnd;
 	private String serviceId;

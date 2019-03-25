@@ -2,6 +2,7 @@ package com.jpbolet.evenflow.api;
 
 import com.jpbolet.evenflow.api.model.*;
 import com.jpbolet.evenflow.api.repository.VisitRepository;
+import com.jpbolet.evenflow.api.services.SequenceGeneratorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -13,7 +14,6 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 import static com.jpbolet.evenflow.api.model.Clinician.ClinicianType.*;
 import static com.jpbolet.evenflow.api.model.Event.EventType.*;
@@ -66,14 +66,12 @@ public class Application {
 					.build());
 
 			Visit visit = Visit.builder()
-					.visitId("2001")
 					.serviceId("TEST_SERVICE")
 					.patient(patient1)
 					.events(events)
 					.visitStart(visitStartDate)
 					.visitEnd(doctor1Date.plus(40, ChronoUnit.MINUTES))
 					.build();
-
 
 			repository.save(visit);
 
