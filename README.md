@@ -5,4 +5,3 @@
 3. Run mvn spring-boot:run
 4. In a web-browser ... http://localhost:8080/vists
 
-

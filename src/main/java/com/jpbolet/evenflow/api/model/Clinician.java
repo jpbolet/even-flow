@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -22,5 +23,8 @@ public class Clinician {
 	private String firstName;
 	private String lastName;
 	private ClinicianType clinicianType;
+	LocalDateTime startActivity;
+	LocalDateTime endActivity;
+	boolean isEngagedInActivity = false;
 
 }
